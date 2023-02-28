@@ -11,6 +11,9 @@ using System.Threading.Tasks;
 
 namespace Mission09_koletonm.Infastructure
 {
+
+    // Sets up the framework for the pagination logic
+
     [HtmlTargetElement("div", Attributes = "page-model")]
     
     public class PaginationTagHelper : TagHelper
@@ -33,7 +36,7 @@ namespace Mission09_koletonm.Infastructure
             IUrlHelper uh = uhf.GetUrlHelper(vc);
             TagBuilder final = new TagBuilder("div");
 
-            for (int i = 1; i < PageModel.TotalPages; i++)
+            for (int i = 1; i <= PageModel.TotalPages; i++)
             {
                 TagBuilder tb = new TagBuilder("a");
                 tb.Attributes["href"] = uh.Action(PageAction, new { pageNum = i });
@@ -41,7 +44,7 @@ namespace Mission09_koletonm.Infastructure
 
                 final.InnerHtml.AppendHtml(tb);
 
-                if (i < (PageModel.TotalPages - 1))
+                if (i <= (PageModel.TotalPages - 1))
                 {
                     final.InnerHtml.Append(" | ");
                 }
