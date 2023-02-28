@@ -1,0 +1,33 @@
+﻿@{
+    ViewData["Title"] = "My Online Bookstore";
+}
+
+@model BooksViewModel
+
+<!--
+    Created by: Koleton Murray
+    Project: Mission 9 - Online Bookstore
+-->
+
+<h1>Hello there!</h1>
+<br />
+
+<!-- Goes through each book located in the Book model and spits out all the data on the page as layed out below -->
+
+@foreach (Book b in Model.Books)
+{
+    <h3>@b.Title</h3>
+
+    <ul>
+        <li>Author: @b.Author</li>
+        <li>Publisher: @b.Publisher</li>
+        <li>ISBN: @b.Isbn</li>
+        <li>Classification: @b.Classification</li>
+        <li>Category: @b.Category</li>
+        <li>Page Count: @b.PageCount</li>
+        <li>Price: $@b.Price</li>
+    </ul>
+    <br />
+}
+
+<div class="text-center" page-model="@Model.PageInfo" page-action="Index"></div>
