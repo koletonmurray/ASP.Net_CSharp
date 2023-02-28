@@ -1,33 +1,25 @@
 ﻿@{
-    ViewData["Title"] = "My Online Bookstore";
+    ViewData["Title"] = "My Bookstore";
 }
 
 @model BooksViewModel
-
 <!--
     Created by: Koleton Murray
     Project: Mission 9 - Online Bookstore
 -->
 
-<h1>Hello there!</h1>
+<h1>Oh, hello there!</h1>
 <br />
 
 <!-- Goes through each book located in the Book model and spits out all the data on the page as layed out below -->
 
 @foreach (Book b in Model.Books)
 {
-    <h3>@b.Title</h3>
-
-    <ul>
-        <li>Author: @b.Author</li>
-        <li>Publisher: @b.Publisher</li>
-        <li>ISBN: @b.Isbn</li>
-        <li>Classification: @b.Classification</li>
-        <li>Category: @b.Category</li>
-        <li>Page Count: @b.PageCount</li>
-        <li>Price: $@b.Price</li>
-    </ul>
-    <br />
+    <partial name="BookSummary" model="b" />
 }
 
-<div class="text-center" page-model="@Model.PageInfo" page-action="Index"></div>
+<br />
+<div page-model="@Model.PageInfo" page-action="Index" page-classes-enabled="true"
+     page-class="btn" page-class-normal="btn-outline-dark"
+     page-class-selected="btn-primary" class="btn-group pull-right m-1 text-center">
+</div>
