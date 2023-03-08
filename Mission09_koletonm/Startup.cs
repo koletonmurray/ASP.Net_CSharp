@@ -32,6 +32,8 @@ namespace Mission09_koletonm
             });
 
             services.AddScoped<IBookstoreRepository, EFBookstoreRepository>();
+
+            // Added Razorpages and session functionality to build out the cart and the add to cart functionality
             services.AddRazorPages();
             services.AddDistributedMemoryCache();
             services.AddSession();
@@ -57,6 +59,8 @@ namespace Mission09_koletonm
 
             //app.UseAuthorization();
 
+
+            // I adjusted the endpoints as follows to properly accommodate passing in a category and or a page and their various combinations. 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute("categoryPage",

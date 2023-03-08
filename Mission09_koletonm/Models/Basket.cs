@@ -5,6 +5,8 @@ using System.Threading.Tasks;
 
 namespace Mission09_koletonm.Models
 {
+    // Add basket functionality to add functionality to create a cart and pass in the book wanted to purchase. It creates a line item for each book with quantity and price
+    // Add method to caluclate the total for the orders
     public class Basket
     {
         public List<BasketLineItem> Items { get; set; } = new List<BasketLineItem>();

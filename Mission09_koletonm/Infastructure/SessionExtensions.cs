@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Mission09_koletonm.Infastructure
 {
+    // This class adds the session extensions so we can maintain the cart throughout a user's session
     public static class SessionExtensions
     {
         public static void SetJson(this ISession session, String key, Object value)

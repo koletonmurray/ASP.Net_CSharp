@@ -30,6 +30,7 @@ namespace Mission09_koletonm.Controllers
 
             var x = new BooksViewModel
             {
+                // Adjusted the books being passed into the Index because we added categories and need to pass them in each time 
                 Books = repo.Books
                     .Where(b => b.Category == category || category == null)
                     .OrderBy(b => b.Title)
@@ -38,6 +39,7 @@ namespace Mission09_koletonm.Controllers
 
                 PageInfo = new PageInfo
                 {
+                    // Modiified the total NumBooks so the categories and pagination are correct
                     TotalNumBooks = 
                         (category == null
                         ? repo.Books.Count()

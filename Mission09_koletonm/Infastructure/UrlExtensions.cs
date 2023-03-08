@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Mission09_koletonm.Infastructure
 {
+    // We use the Url Extensions to add the ability to return to the url and exact category you were previously at
     public static class UrlExtensions
     {
         public static string PathAndQuery(this HttpRequest request) =>

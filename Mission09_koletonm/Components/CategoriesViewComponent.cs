@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Mission09_koletonm.Components
 {
+    // Create a ViewComponent to pass the categories to the sidebar to sort by book category
     public class CategoriesViewComponent : ViewComponent
     {
         private IBookstoreRepository repo { get; set; }

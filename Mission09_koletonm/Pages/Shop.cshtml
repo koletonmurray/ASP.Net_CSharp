@@ -1,7 +1,7 @@
 ﻿@page
 @model Mission09_koletonm.Pages.ShopModel
-@{
-}
+
+@* Razorpage using the basket and other files found in the pages folder to build the cart page *@
 
 <h2>Your Shopping Cart</h2>
 <br /> &nbsp;
@@ -21,7 +21,7 @@
         @foreach (var i in Model.basket.Items)
         {
             <tr>
-                <td>@i.Book.Title</td>
+                <td>@i.Book.Title - @i.Book.Author</td>
                 <td>@i.Quantity</td>
                 <th>@i.Book.Price.ToString("c")</th>
                 <th>@((i.Quantity * i.Book.Price).ToString("c"))</th>
@@ -36,6 +36,8 @@
         </tr>
     </tfoot>
 </table>
+
+<!-- Added the ability to return to last page using the URLExtensions -->
 
 <div class="btn btn-primary">
     <a style="text-decoration: none; color: white;" href="@Model.ReturnUrl">Continue Shopping</a>

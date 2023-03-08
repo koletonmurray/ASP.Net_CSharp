@@ -1,5 +1,5 @@
 ﻿<!--
-    Sets up a partial view that will hold a temlate for the book
+    Sets up a partial view that will hold a template for the book
 -->
 
 @model Book
@@ -28,6 +28,8 @@
             </div>
         </div>
     </div>
+
+    <!-- Adds an add to cart button in the bottom right corner of each card. It passes the necessary information to the basket and then takes the user to the cart. -->
 
     <form method="post" asp-page="/Shop">
         <input type="hidden" asp-for="@Model.BookId"/>

@@ -3,6 +3,9 @@
 
 @model IEnumerable<String>
 
+<!-- Added the components, categories, and defaults to generate the Category filter buttons in the sidebar -->
+<!-- The home button is displayed on top of the lsit. The category filters will be highlighted if that is the current one displayed -->
+
 <div class="d-grid gap-2">
     <a class="btn btn-block btn-outline-secondary" asp-controller="Home" asp-action="Index" asp-route-category="" asp-route-pageNum="1">Home</a>
 
