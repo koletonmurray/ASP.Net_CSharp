@@ -14,6 +14,7 @@
             <th>Quantity</th>
             <th>Cost</th>
             <th>Subtotal</th>
+            <th>Remove</th>
         </tr>
     </thead>
 
@@ -23,8 +24,16 @@
             <tr>
                 <td>@i.Book.Title - @i.Book.Author</td>
                 <td>@i.Quantity</td>
-                <th>@i.Book.Price.ToString("c")</th>
-                <th>@((i.Quantity * i.Book.Price).ToString("c"))</th>
+                <td>@i.Book.Price.ToString("c")</td>
+                <td>@((i.Quantity * i.Book.Price).ToString("c"))</td>
+
+                <td class="text-center">
+                    <form method="post" asp-page-handler="Remove">
+                        <input type="hidden" name="bookId" value="@i.Book.BookId"/>
+                        <input type="hidden" name="returnUrl" value="@Model.ReturnUrl"/>
+                        <button type="submit" class="btn btn-sm btn-danger">Remove</button>
+                    </form>
+                </td>
             </tr>
         }
     </tbody>
@@ -39,6 +48,7 @@
 
 <!-- Added the ability to return to last page using the URLExtensions -->
 
-<div class="btn btn-primary">
-    <a style="text-decoration: none; color: white;" href="@Model.ReturnUrl">Continue Shopping</a>
+<div >
+    <a class="btn btn-primary" style="text-decoration: none; color: white;" href="@Model.ReturnUrl">Continue Shopping</a>
+    <a class="btn btn-success text-white" asp-controller="Order" asp-action="Checkout">Checkout</a>
 </div>
