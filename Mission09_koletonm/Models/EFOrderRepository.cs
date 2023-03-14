@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace Mission09_koletonm.Models
 {
+    // Creates the actual repository for orders to reference when we add to an order or save it to the db 
     public class EFOrderRepository : IOrderRepository
     {
         private BookstoreContext context;

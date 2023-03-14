@@ -7,6 +7,8 @@ using System.Threading.Tasks;
 
 namespace Mission09_koletonm.Controllers
 {
+    // Brand new controller to control the checkout view and what to do when we post, get
+    // Reference the Order repository to pull in that repository for checkout purposes
     public class OrderController : Controller
     {
         private IOrderRepository repo { get; set; }

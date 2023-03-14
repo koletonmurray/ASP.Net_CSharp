@@ -6,16 +6,24 @@
     <title>@ViewData["Title"]</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <link href="/lib/font-awesome/css/all.min.css" rel="stylesheet" />
 </head>
 <body>
     <!--
         Bootstrap to create the layout of the page.
+        Also added the Cart icon in the top right corner by importing the font-awesome library above
      -->
     <div class="bg-dark text-white p-2">
-        <span class="navbar-brand m-lg-2">
-            <a class="text-white" style="text-decoration: none" asp-controller="Home" asp-action="Index" asp-route-category="" asp-route-pageNum="1">My Bookstore</a>
-        </span>
-        <a class="navbar-brand m-lg-2 text-white float-right" asp-page="/Shop">My Cart</a>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col navbar-brand">
+                    <a class="text-white" style="text-decoration: none" asp-controller="Home" asp-action="Index" asp-route-category="" asp-route-pageNum="1">My Bookstore</a>
+                </div>
+                <div class="col-6 text-right">
+                    <vc:cart-summary />
+                </div>
+            </div>
+        </div>
     </div>
     <div class="row m-1 p-1 pt-4">
         <div id="categories" class="col-3">

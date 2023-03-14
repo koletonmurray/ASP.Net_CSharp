@@ -4070,7 +4070,10 @@
    * @property {Function} data.getBoundingClientRect
    * A function that returns a set of coordinates compatible with the native `getBoundingClientRect` method.
    * @property {number} data.clientWidth
-   * An ES6 getter that will return the width of the virtual reference element.
+   * An ES6 getter that will return the width of the 
+   * 
+   * 
+   * reference element.
    * @property {number} data.clientHeight
    * An ES6 getter that will return the height of the virtual reference element.
    */

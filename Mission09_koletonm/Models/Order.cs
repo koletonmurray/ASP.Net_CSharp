@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Mission09_koletonm.Models
 {
+    // Model for the Orders table in the database. We use this model when we input checkout information to place an order
     public class Order
     {
         [Key]

@@ -2,6 +2,7 @@
 
 namespace Mission09_koletonm.Migrations
 {
+    // The migration that created the Orders table
     public partial class AddOrders : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)

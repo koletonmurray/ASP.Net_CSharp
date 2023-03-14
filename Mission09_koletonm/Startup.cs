@@ -40,6 +40,7 @@ namespace Mission09_koletonm
             services.AddDistributedMemoryCache();
             services.AddSession();
 
+            //Adds our session basket to maintain the basket throughout the session and then access it
             services.AddScoped<Basket>(x => SessionBasket.GetBasket(x));
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
         }
